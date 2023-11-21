@@ -6,7 +6,6 @@
 
 .container {
   min-height: 100vh;
-  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +36,7 @@
   font-size: 0;
   height: 200px;
   width: 200px;
-  /*disable white space between inline block element */
+  z-index: 0;
 }
 
 .hexes div {
@@ -52,13 +51,12 @@
   width: var(--s);
   margin: var(--m);
   height: calc(var(--s) * 1.1547);
-  /* display: inline-block; */
   font-size: initial;
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
   background: radial-gradient(
     circle at 50% 50%,
     transparent,
-    rgba(0, 255, 255, 0.2)
+    rgba(9, 233, 233, 0.305)
   );
   margin-bottom: calc(var(--m) - var(--s) * 0.2885);
 }
@@ -75,145 +73,106 @@
 }
 
 .sphere {
-  top: 50px;
-  left: 40px;
+  top: 3rem;
+  left: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   border-radius: 50%;
   background: radial-gradient(circle at 50% 50%, transparent, #6666663d);
-  box-shadow: 0px 0px 50px rgb(77, 232, 170);
+  box-shadow: 0px 10px 50px rgb(77, 232, 170);
   position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
 }
 
-.latitudes {
+.latitudes,
+.longitudes {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 100px;
-  position: relative;
+  position: absolute;
   perspective-origin: 1000px;
   transform-style: preserve-3d;
   animation: rotate 10s linear infinite;
 }
 
-.latitude-1 {
+.latitude-1,
+.latitude-2,
+.latitude-3,
+.latitude-4,
+.latitude-5,
+.latitude-6,
+.longitude-1,
+.longitude-2,
+.longitude-3,
+.longitude-4,
+.longitude-5,
+.longitude-6 {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 2px dotted #ddd;
+  border: 2px dotted rgb(0, 255, 170);
   position: absolute;
+  transform: rotateX(90deg);
+}
+
+.latitude-1 {
   transform: translateY(-10px) rotateX(90deg);
 }
 
 .latitude-2 {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: translateY(10px) rotateX(90deg);
 }
 
 .latitude-3 {
   width: 84px;
   height: 84px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: translateY(25px) rotateX(90deg);
 }
 
 .latitude-4 {
   width: 84px;
   height: 84px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: translateY(-25px) rotateX(90deg);
 }
 
 .latitude-5 {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: translateY(-40px) rotateX(90deg);
 }
 
 .latitude-6 {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: translateY(40px) rotateX(90deg);
 }
 
-.longitudes {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  position: absolute;
-  perspective-origin: 1000px;
-  transform-style: preserve-3d;
-  animation: rotate 10s linear infinite;
-}
-
 .longitude-1 {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: rotateY(60deg);
 }
 
 .longitude-2 {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: rotateY(120deg);
 }
 
 .longitude-3 {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: rotateY(180deg);
 }
 
 .longitude-4 {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: rotateY(240deg);
 }
 
 .longitude-5 {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: rotateY(300deg);
 }
 
 .longitude-6 {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: 2px dotted #ddd;
-  position: absolute;
   transform: rotateY(360deg);
 }
 
